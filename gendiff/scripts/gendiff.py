@@ -39,7 +39,7 @@ def main():
     parser.add_argument('-f', '--format', dest="format", action="store", help='set format of output')
 
     args = parser.parse_args()
-   # print(args)
+    print(generate_diff(args.first_file, args.second_file))
 
 if __name__ == '__main__':
     main()
