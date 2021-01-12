@@ -2,14 +2,12 @@
 
 import argparse
 import json
-import os.path
+from gendiff.readfile import read_json_file
 
 
 def generate_diff(path1, path2):
-    absolute_path1 = os.path.abspath(path1)
-    absolute_path2 = os.path.abspath(path2)
-    file1 = json.load(open(absolute_path1))
-    file2 = json.load(open(absolute_path2))
+    file1 = read_json_file(path1)
+    file2 = read_json_file(path2)
     result = ['{']
     keys1 = list(file1.keys())
     keys2 = list(file1.keys())
