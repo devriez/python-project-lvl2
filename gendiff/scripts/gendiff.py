@@ -1,7 +1,6 @@
 #! /usr/bin/env python3
 
 import argparse
-import json
 from gendiff.readfile import read_json_file
 
 
