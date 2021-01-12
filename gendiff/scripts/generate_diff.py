@@ -9,9 +9,8 @@ def generate_diff(path1, path2):
     file2 = read_json_file(path2)
     result = ['{']
     keys1 = list(file1.keys())
-    keys2 = list(file1.keys())
+    keys2 = list(file2.keys())
     all_keys_sorted = sorted(set(keys1 + keys2))
-
     for key in all_keys_sorted:
         if key in file1 and key in file2:
             if file1[key] != file2[key]:
@@ -25,7 +24,6 @@ def generate_diff(path1, path2):
             result.append(f'  + {key}: {file2[key]}')
 
     result.append('}')
-
     return '\n'.join(result)
 
 
