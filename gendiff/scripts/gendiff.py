@@ -6,8 +6,10 @@ import os.path
 
 
 def generate_diff(path1, path2):
-    file1 = json.load(open(os.path.abspath(path1)))
-    file2 = json.load(open(os.path.abspath(path2)))
+    absolute_path1 = os.path.abspath(path1)
+    absolute_path2 = os.path.abspath(path2)
+    file1 = json.load(open(absolute_path1))
+    file2 = json.load(open(absolute_path2))
     result = ['{']
     keys1 = list(file1.keys())
     keys2 = list(file1.keys())
@@ -35,8 +37,8 @@ def main():
     parser = argparse.ArgumentParser(description='Generate diff')
     parser.add_argument('first_file', action="store")
     parser.add_argument('second_file', action="store")
-    parser.add_argument('-f', '--format', dest="format", 
-    action="store", help='set format of output')
+    parser.add_argument('-f', '--format', dest="format",
+                        action="store", help='set format of output')
     args = parser.parse_args()
     print(generate_diff(args.first_file, args.second_file))
 
