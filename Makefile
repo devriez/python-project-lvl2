@@ -18,3 +18,9 @@ lint:
 
 nano:
 	nano gendiff/scripts/gendiff.py
+
+test:
+	poetry run pytest gendiff -v
+
+test-coverage:
+	poetry run pytest --cov=gendiff --cov-report xml
