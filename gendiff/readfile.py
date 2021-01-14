@@ -1,7 +1,10 @@
 import os.path
 import json
+import yaml
 
 
-def read_json_file(path):
+def read_file(path):
     absolute_path = os.path.abspath(path)
-    return json.load(open(absolute_path))
+    file = open(absolute_path)
+    #return json.load()
+    return yaml.load(file)

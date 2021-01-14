@@ -11,6 +11,6 @@ def test_generate_diff():
 
     assert result_json == result
 
-    result_yml = generate_diff('gendiff/tests/fixtures/file1.yml',
-                               'gendiff/tests/fixtures/file2.yml')
-    assert result_yml == result
+#    result_yml = generate_diff('gendiff/tests/fixtures/file1.yml',
+#                               'gendiff/tests/fixtures/file2.yml')
+#    assert result_yml == result

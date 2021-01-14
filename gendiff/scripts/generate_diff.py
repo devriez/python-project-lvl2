@@ -1,12 +1,12 @@
 #! /usr/bin/env python3
 
 import argparse
-from gendiff.readfile import read_json_file
+from gendiff.readfile import read_file
 
 
 def generate_diff(path1, path2):
-    file1 = read_json_file(path1)
-    file2 = read_json_file(path2)
+    file1 = read_file(path1)
+    file2 = read_file(path2)
     result = ['{']
     keys1 = list(file1.keys())
     keys2 = list(file2.keys())
