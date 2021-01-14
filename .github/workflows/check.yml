@@ -35,7 +35,7 @@ jobs:
     - run: |
           pip install poetry
           make install
-    - uses: paambaati/codeclimate-action@v2.2.4
+    - uses: paambaati/codeclimate-action@v2.7.5
       env:
         CC_TEST_REPORTER_ID: 268149fdc01b007176e8039f4ddfa1fa24d6596ddc2d759bde00b525a5f2c1d6
       with:
