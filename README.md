@@ -8,3 +8,5 @@
 ![check](https://github.com/devriez/python-project-lvl2/workflows/check/badge.svg)
 
 https://asciinema.org/a/54QVO4CYLRVrdobyDfAbcVBcb
+
+https://asciinema.org/a/EZMb3KJbZlCDzpa0Mcx7Jwbb5
