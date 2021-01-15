@@ -14,5 +14,5 @@ def test_read_file():
       "host": "hexlet.io"
     }
 
-    assert read_file('gendiff/tests/fixtures/file1.json') == file1
-    assert read_file('gendiff/tests/fixtures/file2.json') == file2
+    assert read_file('gendiff/tests/fixtures/file1_flat.json') == file1
+    assert read_file('gendiff/tests/fixtures/file2_flat.json') == file2
