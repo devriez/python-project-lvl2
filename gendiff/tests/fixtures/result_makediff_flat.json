@@ -3,8 +3,8 @@
     "host": {"status1": "unchanged", "body1": "hexlet.io"},
     "proxy": {"status1": "deleted", "body1": "123.234.53.22"},
     "timeout": {
-                "status1": "deleted", "body1": 50, 
-                "status2": "add", "body2": 20
+                "status1": "deleted", "body1": 50,
+                "status2": "added", "body2": 20
                },
-    "verbose": {"status1": "add", "body1": true}
+    "verbose": {"status1": "added", "body1": true}
   }

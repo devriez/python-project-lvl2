@@ -12,14 +12,14 @@ def make_diff(file1, file2):
             result[key] = {'status1': 'deleted', 'body1': file1[key]}
         elif key in file2 and key not in file1:
             result[key] = {'status1': 'added', 'body1': file2[key]}
-        else: 
+        else:
             if file1[key] == file2[key]:
                 result[key] = {'status1': 'unchanged', 'body1': file1[key]}
             elif (type(file1[key]) != dict) or (type(file2[key]) != dict):
                 result[key] = {'status1': 'deleted', 'body1': file1[key],
                                'status2': 'added', 'body2': file2[key]}
-            else: 
+            else:
                 result[key] = {'status1': 'unchanged', 'body1': make_diff(file1[key], file2[key])}
-        
+
     return result
 
