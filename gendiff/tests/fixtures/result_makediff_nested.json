@@ -6,7 +6,7 @@
       "setting3": {"status1": "replaced", "body1": true, "body2": null},
       "setting4": {"status1": "added", "body1": "blah blah"},
       "setting5": {"status1": "added", "body1": {"key5": "value5"}},
-      "setting6": {"status": "changed", "body1": {
+      "setting6": {"status1": "changed", "body1": {
                      "doge": {"status1": "changed", "body1": {
                                 "wow": {"status1": "replaced", "body1": "", "body2": "so much"}
                      }
@@ -24,7 +24,7 @@
     }
     },
     "group2": {"status1": "deleted", "body1" : {
-        "abc": "12345",
+        "abc": 12345,
         "deep": {"id": 45}
     }
     },

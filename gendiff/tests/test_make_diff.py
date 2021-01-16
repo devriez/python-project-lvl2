@@ -18,13 +18,17 @@ def test_make_diff():
     result_flat_json = make_diff(flat1_json, flat2_json)
     assert result_flat_json == read_file(PATH_TO_RESULT_FLAT)
 
-    #result_nested_json = make_diff(PATH_TO_NESTED1_JSON, PATH_TO_NESTED2_JSON)
-    #assert result_nested_json == read_file(PATH_TO_RESULT_NESTED)
+    nested1_json = read_file(PATH_TO_NESTED1_JSON)
+    nested2_json = read_file(PATH_TO_NESTED2_JSON)
+    result_nested_json = make_diff(nested1_json, nested2_json)
+    assert result_nested_json == read_file(PATH_TO_RESULT_NESTED)
 
     flat1_yml = read_file(PATH_TO_FLAT1_YML)
-    flat2_yml = read_file(PATH_TO_FLAT2_YML)   
+    flat2_yml = read_file(PATH_TO_FLAT2_YML)
     result_flat_yml = make_diff(flat1_yml, flat2_yml)
     assert result_flat_yml == read_file(PATH_TO_RESULT_FLAT)
 
-    #result_nested_yml = make_diff(PATH_TO_NESTED1_YML, PATH_TO_NESTED2_YML)
-    #assert result_fnested_yml == read_file(PATH_TO_RESULT_NESTED)
+    nested1_yml = read_file(PATH_TO_NESTED1_YML)
+    nested2_yml = read_file(PATH_TO_NESTED2_YML)
+    result_nested_yml = make_diff(nested1_yml, nested2_yml)
+    assert result_nested_yml == read_file(PATH_TO_RESULT_NESTED)
