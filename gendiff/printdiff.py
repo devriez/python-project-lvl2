@@ -6,7 +6,7 @@ def print_diff(diff):
     sorted_keys = sorted(diff.keys())
 
     for key in sorted_keys:
-        if diff[key]['status1'] == 'add':
+        if diff[key]['status1'] == 'added':
             #make_string(diff, result, "+", key, body)
             result.append(f"  + {key}: {diff[key]['body1']}")
         if diff[key]['status1'] == 'deleted':
@@ -15,7 +15,7 @@ def print_diff(diff):
             result.append(f"    {key}: {diff[key]['body1']}")
         if diff[key]['status1'] == 'replaced':
             result.append(f"  - {key}: {diff[key]['body1']}")
-            result.append(f"  + {key}: {diff[key]['body2']}")        
+            result.append(f"  + {key}: {diff[key]['body2']}")
         if diff[key]['status1'] == 'changed':
             diff_nested = diff[key]['body1']
             result.append(f"    {key}: {print_diff(diff_nested)}")
