@@ -1,5 +1,5 @@
 def print_diff(diff, indent=0):
-
+    print('diff', diff)
     if type(diff) != dict:
         return diff
 
@@ -8,7 +8,11 @@ def print_diff(diff, indent=0):
     result = ['{']
     sorted_keys = sorted(diff.keys())
 
+    print('keys', list(diff.keys()))
+    print('sorted_keys', sorted_keys)
+
     for key in sorted_keys:
+        print('key', key)
         if diff[key]['status1'] == 'added':
             result.append(f"{step}  + {key}: {print_diff(diff[key]['body1'], next_indent)}")
         if diff[key]['status1'] == 'deleted':
