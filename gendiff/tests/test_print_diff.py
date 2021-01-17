@@ -10,12 +10,13 @@ PATH_TO_STRING_RESULT_NESTED_SHORT = 'gendiff/tests/fixtures/result_printdiff_ne
 
 
 def test_print_diff():
-#    f = open(PATH_TO_STRING_RESULT_FLAT)
-#    correct_result_flat = f.read()
-#    result_json_flat = read_file(PATH_TO_JSON_RESULT_FLAT)
-#    result_flat = print_diff(result_json_flat)
-#
-#    assert result_flat == correct_result_flat
+    f = open(PATH_TO_STRING_RESULT_FLAT)
+    correct_result_flat = f.read()
+    result_json_flat = read_file(PATH_TO_JSON_RESULT_FLAT)
+    result_flat = print_diff(result_json_flat)
+    print('result', result_flat)
+    print('correct_result', correct_result_flat)
+    assert result_flat == correct_result_flat
 
     f = open(PATH_TO_STRING_RESULT_NESTED_SHORT)
     correct_result_nested_short = f.read()
@@ -29,5 +30,6 @@ def test_print_diff():
     correct_result_nested = f.read()
     result_json_nested = read_file(PATH_TO_JSON_RESULT_NESTED)
     result_nested = print_diff(result_json_nested)
-
+    print('result', result_nested)
+    print('correct_result', correct_result_nested)
     assert result_nested == correct_result_nested

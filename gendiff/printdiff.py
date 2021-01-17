@@ -1,5 +1,12 @@
 def print_diff(diff, indent=0, sort_flag='no_need_to_sort'):
 
+    if diff == None:
+        return 'null'
+
+    if type(diff) == bool:
+        string = str(diff)
+        return string.lower()
+
     if type(diff) != dict:
         return diff
 
