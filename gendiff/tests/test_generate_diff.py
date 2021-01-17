@@ -12,7 +12,7 @@ PATH_TO_NESTED2_YML = 'gendiff/tests/fixtures/file2_nested.yml'
 PATH_TO_STRING_RESULT_FLAT = 'gendiff/tests/fixtures/result_printdiff_flat.txt'
 PATH_TO_STRING_RESULT_NESTED = 'gendiff/tests/fixtures/result_printdiff_nested.txt'
 
- def test_generate_diff():
+def test_generate_diff():
     f = open(PATH_TO_STRING_RESULT_FLAT)
     result_correct_flat = f.read()
 
