@@ -7,7 +7,7 @@ PATH_TO_JSON_RESULT_NESTED = 'gendiff/tests/fixtures/result_makediff_nested.json
 PATH_TO_STRING_RESULT_NESTED = 'gendiff/tests/fixtures/result_printdiff_nested.txt'
 
 
-def test_print_diff():
+#def test_print_diff():
     f = open(PATH_TO_STRING_RESULT_FLAT)
     correct_result_flat = f.read()
     result_json_flat = read_file(PATH_TO_JSON_RESULT_FLAT)

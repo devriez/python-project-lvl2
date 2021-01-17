@@ -1,5 +1,3 @@
-
-
 def print_diff(diff, indent=0):
     step = ' ' * indent
     result = ['{']
@@ -16,9 +14,9 @@ def print_diff(diff, indent=0):
             result.append(f"{step}  - {key}: {diff[key]['body1']}")
             result.append(f"{step}  + {key}: {diff[key]['body2']}")
         if diff[key]['status1'] == 'changed':
-            next_indent = indent + 2
+            next_indent = indent + 4
             diff_nested = diff[key]['body1']
             result.append(f"{step}    {key}: {print_diff(diff_nested, next_indent)}")
 
-    result.append('}')
+    result.append(f'{step}}}')
     return '\n'.join(result)

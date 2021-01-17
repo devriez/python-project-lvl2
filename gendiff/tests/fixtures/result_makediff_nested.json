@@ -5,7 +5,7 @@
       "setting2": {"status1": "deleted", "body1": 200},
       "setting3": {"status1": "replaced", "body1": true, "body2": null},
       "setting4": {"status1": "added", "body1": "blah blah"},
-      "setting5": {"status1": "added", "body1": {"key5": {"ststus1": "unchangd", "body1": "value5"}}},
+      "setting5": {"status1": "added", "body1": {"key5": {"status1": "unchanged", "body1": "value5"}}},
       "setting6": {"status1": "changed", "body1": {
                      "doge": {"status1": "changed", "body1": {
                                 "wow": {"status1": "replaced", "body1": "", "body2": "so much"}
@@ -21,8 +21,8 @@
        "baz": {"status1": "replaced", "body1": "bas", "body2": "bars"},
         "foo": {"status1": "unchanged", "body1": "bar"},
         "nest": {
-            "status1": "replaced", 
-            "body1" :{"key": {"status1": "unchanged", "body1": "value"}}, 
+            "status1": "replaced",
+            "body1" :{"key": {"status1": "unchanged", "body1": "value"}},
             "body2": "str"}
     }
     },
@@ -34,7 +34,7 @@
     },
     "group3": {"status1": "added", "body1": {
         "fee": 100500,
-        "deep": { "status1": "unchanged", "body1": { 
+        "deep": { "status1": "unchanged", "body1": {
             "id": {"status1": "unchanged", "body1": {
                 "number": 45
               }
