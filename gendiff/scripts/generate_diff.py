@@ -2,29 +2,15 @@
 
 import argparse
 from gendiff.readfile import read_file
+from gendiff.makediff import make_diff
+from gendiff import printdiff
 
 
-def generate_diff(path1, path2):
+def generate_diff(path1, path2, formater = printdiff.stylish):
     file1 = read_file(path1)
     file2 = read_file(path2)
-    result = ['{']
-    keys1 = list(file1.keys())
-    keys2 = list(file2.keys())
-    all_keys_sorted = sorted(set(keys1 + keys2))
-    for key in all_keys_sorted:
-        if key in file1 and key in file2:
-            if file1[key] != file2[key]:
-                result.append(f'  - {key}: {file1[key]}')
-                result.append(f'  + {key}: {file2[key]}')
-            else:
-                result.append(f'    {key}: {file1[key]}')
-        elif key in file1 and key not in file2:
-            result.append(f'  - {key}: {file1[key]}')
-        else:
-            result.append(f'  + {key}: {file2[key]}')
-
-    result.append('}')
-    return '\n'.join(result)
+    diff = make_diff(file1, file2)
+    return formater(diff)
 
 
 def main():
@@ -35,7 +21,7 @@ def main():
     parser.add_argument('-f', '--format', dest="format",
                         action="store", help='set format of output')
     args = parser.parse_args()
-    print(generate_diff(args.first_file, args.second_file))
+    print(generate_diff(args.first_file, args.second_file, printdiff.stylish))
 
 
 if __name__ == '__main__':
