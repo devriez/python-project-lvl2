@@ -11,13 +11,14 @@ def stylish(diff, indent=0, sort_flag='no_need_to_sort'):
         return diff
 
     step = ' ' * indent
-    indent = indent + 4
     result = ['{']
 
     if indent == 0 or sort_flag == 'sort':
         keys = sorted(diff.keys())
     else:
         keys = diff.keys()
+
+    indent = indent + 4
 
     for key in keys:
         if diff[key]['status1'] == 'added':
