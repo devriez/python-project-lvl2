@@ -22,17 +22,22 @@ def stylish(diff, indent=0, sort_flag='no_need_to_sort'):
     for key in keys:
         if diff[key]['status1'] == 'added':
             string = f"{step}  + {key}: {stylish(diff[key]['body1'], indent)}"
+            result.append(string)
         if diff[key]['status1'] == 'deleted':
             string = f"{step}  - {key}: {stylish(diff[key]['body1'], indent)}"
+            result.append(string)
         if diff[key]['status1'] == 'unchanged':
             string = f"{step}    {key}: {stylish(diff[key]['body1'], indent)}"
+            result.append(string)
         if diff[key]['status1'] == 'replaced':
             string = f"{step}  - {key}: {stylish(diff[key]['body1'], indent)}"
+            result.append(string)
             string = f"{step}  + {key}: {stylish(diff[key]['body2'], indent)}"
+            result.append(string)
         if diff[key]['status1'] == 'changed':
             diff_inner = diff[key]['body1']
             string = f"{step}    {key}: {stylish(diff_inner, indent, 'sort')}"
-        result.append(string)
+            result.append(string)
 
     result.append(f'{step}}}')
     return '\n'.join(result)
