@@ -1,6 +1,6 @@
 def stylish(diff, indent=0, sort_flag='no_need_to_sort'):
 
-    if diff == None:
+    if diff is None:
         return 'null'
 
     if type(diff) == bool:
@@ -11,26 +11,28 @@ def stylish(diff, indent=0, sort_flag='no_need_to_sort'):
         return diff
 
     step = ' ' * indent
-    next_indent = indent + 4
+    indent = indent + 4
     result = ['{']
-    keys = diff.keys()
+
     if indent == 0 or sort_flag == 'sort':
-        keys = sorted(keys)
+        keys = sorted(diff.keys())
+    else:
+        keys = diff.keys()
 
     for key in keys:
         if diff[key]['status1'] == 'added':
-            result.append(f"{step}  + {key}: {stylish(diff[key]['body1'], next_indent)}")
+            string = f"{step}  + {key}: {stylish(diff[key]['body1'], indent)}"
         if diff[key]['status1'] == 'deleted':
-            result.append(f"{step}  - {key}: {stylish(diff[key]['body1'], next_indent)}")
+            string = f"{step}  - {key}: {stylish(diff[key]['body1'], indent)}"
         if diff[key]['status1'] == 'unchanged':
-            result.append(f"{step}    {key}: {stylish(diff[key]['body1'], next_indent)}")
+            string = f"{step}    {key}: {stylish(diff[key]['body1'], indent)}"
         if diff[key]['status1'] == 'replaced':
-            result.append(f"{step}  - {key}: {stylish(diff[key]['body1'], next_indent)}")
-            result.append(f"{step}  + {key}: {stylish(diff[key]['body2'], next_indent)}")
+            string = f"{step}  - {key}: {stylish(diff[key]['body1'], indent)}"
+            string = f"{step}  + {key}: {stylish(diff[key]['body2'], indent)}"
         if diff[key]['status1'] == 'changed':
-            next_indent = indent + 4
-            diff_nested = diff[key]['body1']
-            result.append(f"{step}    {key}: {stylish(diff_nested, next_indent, 'sort')}")
+            diff_inner = diff[key]['body1']
+            string = f"{step}    {key}: {stylish(diff_inner, indent, 'sort')}"
+        result.append(string)
 
     result.append(f'{step}}}')
     return '\n'.join(result)

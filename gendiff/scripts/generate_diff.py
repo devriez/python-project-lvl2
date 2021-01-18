@@ -6,7 +6,7 @@ from gendiff.makediff import make_diff
 from gendiff import printdiff
 
 
-def generate_diff(path1, path2, formater = printdiff.stylish):
+def generate_diff(path1, path2, formater=printdiff.stylish):
     file1 = read_file(path1)
     file2 = read_file(path2)
     diff = make_diff(file1, file2)
