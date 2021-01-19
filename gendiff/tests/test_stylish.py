@@ -1,4 +1,4 @@
-from gendiff.printdiff import stylish
+from gendiff.formaters.stylish import stylish
 from gendiff.readfile import read_file
 
 PATH_TO_JSON_FLAT = 'gendiff/tests/fixtures/result_makediff_flat.json'
