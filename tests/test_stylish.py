@@ -1,8 +1,8 @@
 from gendiff.formaters.stylish_render import stylish_render
 from gendiff.readfile import read_file
 
-PATH_TO_DIFF = 'tests/fixtures/result_makediff_nested.json'
-PATH_TO_RESULT = 'tests/fixtures/result_printdiff_nested.txt'
+PATH_TO_DIFF = 'tests/fixtures/result_makediff.json'
+PATH_TO_RESULT = 'tests/fixtures/result_stylish.txt'
 
 
 def test_stylish():

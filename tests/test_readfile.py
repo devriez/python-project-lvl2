@@ -1,6 +1,6 @@
 from gendiff.readfile import read_file
 
-PATH_TO_FILE_1 = 'tests/fixtures/file1_flat.json'
+PATH_TO_FILE_1 = 'tests/fixtures/file_before.json'
 FILE1 = {
   "host": "hexlet.io",
   "timeout": 50,

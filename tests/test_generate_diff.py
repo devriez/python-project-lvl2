@@ -1,10 +1,10 @@
 from gendiff.scripts.generate_diff import generate_diff
 
-PATH_TO_JSON_BEFORE = 'tests/fixtures/file1_nested.json'
-PATH_TO_JSON_AFTER = 'tests/fixtures/file2_nested.json'
-PATH_TO_YML_BEFORE = 'tests/fixtures/file1_nested.yml'
-PATH_TO_YML_AFTER = 'tests/fixtures/file2_nested.yml'
-PATH_TO_RESULT = 'tests/fixtures/result_printdiff_nested.txt'
+PATH_TO_JSON_BEFORE = 'tests/fixtures/file_before.json'
+PATH_TO_JSON_AFTER = 'tests/fixtures/file_after.json'
+PATH_TO_YML_BEFORE = 'tests/fixtures/file_before.yml'
+PATH_TO_YML_AFTER = 'tests/fixtures/file_after.yml'
+PATH_TO_RESULT = 'tests/fixtures/result_printdiff.txt'
 
 
 def test_generate_diff():
