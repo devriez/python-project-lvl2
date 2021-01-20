@@ -1,16 +1,16 @@
 from gendiff.makediff import make_diff
 from gendiff.readfile import read_file
 
-PATH_TO_FLAT1_JSON = 'gendiff/tests/fixtures/file1_flat.json'
-PATH_TO_FLAT2_JSON = 'gendiff/tests/fixtures/file2_flat.json'
-PATH_TO_FLAT1_YML = 'gendiff/tests/fixtures/file1_flat.yml'
-PATH_TO_FLAT2_YML = 'gendiff/tests/fixtures/file2_flat.yml'
-PATH_TO_RESULT_FLAT = 'gendiff/tests/fixtures/result_makediff_flat.json'
-PATH_TO_NESTED1_JSON = 'gendiff/tests/fixtures/file1_nested.json'
-PATH_TO_NESTED2_JSON = 'gendiff/tests/fixtures/file2_nested.json'
-PATH_TO_NESTED1_YML = 'gendiff/tests/fixtures/file1_nested.yml'
-PATH_TO_NESTED2_YML = 'gendiff/tests/fixtures/file2_nested.yml'
-PATH_TO_RESULT_NESTED = 'gendiff/tests/fixtures/result_makediff_nested.json'
+PATH_TO_FLAT1_JSON = 'tests/fixtures/file1_flat.json'
+PATH_TO_FLAT2_JSON = 'tests/fixtures/file2_flat.json'
+PATH_TO_FLAT1_YML = 'tests/fixtures/file1_flat.yml'
+PATH_TO_FLAT2_YML = 'tests/fixtures/file2_flat.yml'
+PATH_TO_RESULT_FLAT = 'tests/fixtures/result_makediff_flat.json'
+PATH_TO_NESTED1_JSON = 'tests/fixtures/file1_nested.json'
+PATH_TO_NESTED2_JSON = 'tests/fixtures/file2_nested.json'
+PATH_TO_NESTED1_YML = 'tests/fixtures/file1_nested.yml'
+PATH_TO_NESTED2_YML = 'tests/fixtures/file2_nested.yml'
+PATH_TO_RESULT_NESTED = 'tests/fixtures/result_makediff_nested.json'
 
 
 def test_make_diff():

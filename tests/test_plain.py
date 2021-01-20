@@ -1,8 +1,8 @@
 from gendiff.formaters.plain import plain
 from gendiff.readfile import read_file
 
-PATH_TO_JSON_NESTED = 'gendiff/tests/fixtures/result_makediff_nested.json'
-PATH_TO_PLAIN = 'gendiff/tests/fixtures/result_plain.txt'
+PATH_TO_JSON_NESTED = 'tests/fixtures/result_makediff_nested.json'
+PATH_TO_PLAIN = 'tests/fixtures/result_plain.txt'
 
 
 def test_plain():

@@ -1,8 +1,8 @@
 from gendiff.formaters.json_render import json_render
 from gendiff.readfile import read_file
 
-PATH_TO_JSON = 'gendiff/tests/fixtures/result_makediff_nested.json'
-PATH_TO_RESULT = 'gendiff/tests/fixtures/result_json.txt'
+PATH_TO_JSON = 'tests/fixtures/result_makediff_nested.json'
+PATH_TO_RESULT = 'tests/fixtures/result_json.txt'
 
 def test_json():
 

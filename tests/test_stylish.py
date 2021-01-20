@@ -1,10 +1,10 @@
 from gendiff.formaters.stylish import stylish
 from gendiff.readfile import read_file
 
-PATH_TO_JSON_FLAT = 'gendiff/tests/fixtures/result_makediff_flat.json'
-PATH_TO_STRING_FLAT = 'gendiff/tests/fixtures/result_printdiff_flat.txt'
-PATH_TO_JSON_NESTED = 'gendiff/tests/fixtures/result_makediff_nested.json'
-PATH_TO_STRING_NESTED = 'gendiff/tests/fixtures/result_printdiff_nested.txt'
+PATH_TO_JSON_FLAT = 'tests/fixtures/result_makediff_flat.json'
+PATH_TO_STRING_FLAT = 'tests/fixtures/result_printdiff_flat.txt'
+PATH_TO_JSON_NESTED = 'tests/fixtures/result_makediff_nested.json'
+PATH_TO_STRING_NESTED = 'tests/fixtures/result_printdiff_nested.txt'
 
 
 def test_stylish():
