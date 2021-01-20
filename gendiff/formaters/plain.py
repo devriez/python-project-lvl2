@@ -28,7 +28,7 @@ def _make_string_from_template(path, diff, key):
 
 
 def plain(diff):
-    def inner(diff, path=''):    
+    def inner(diff, path=''):
         keys = sorted(diff.keys())
         result = []
 
@@ -47,6 +47,6 @@ def plain(diff):
                 continue
             result.append(string)
 
-            return '\n'.join(result)
-    
+        return '\n'.join(result)
+
     return inner(diff)
