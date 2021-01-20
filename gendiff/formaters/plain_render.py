@@ -27,7 +27,7 @@ def _make_string_from_template(path, diff, key):
     return template[status]
 
 
-def plain(diff):
+def plain_render(diff):
     def inner(diff, path=''):
         keys = sorted(diff.keys())
         result = []
