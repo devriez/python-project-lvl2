@@ -27,23 +27,26 @@ def _make_string_from_template(path, diff, key):
     return template[status]
 
 
-def plain(diff, path=''):
-    keys = sorted(diff.keys())
-    result = []
+def plain(diff):
+    def inner(diff, path=''):    
+        keys = sorted(diff.keys())
+        result = []
 
-    for key in keys:
-        path_to_value = path + key
-        if diff[key]['status1'] == 'added':
-            string = _make_string_from_template(path_to_value, diff, key)
-        elif diff[key]['status1'] == 'deleted':
-            string = _make_string_from_template(path_to_value, diff, key)
-        elif diff[key]['status1'] == 'replaced':
-            string = _make_string_from_template(path_to_value, diff, key)
-        elif diff[key]['status1'] == 'changed':
-            next_step_path = path_to_value + '.'
-            string = plain(diff[key]['body1'], next_step_path)
-        else:
-             continue
-        result.append(string)
+        for key in keys:
+            path_to_value = path + key
+            if diff[key]['status1'] == 'added':
+                string = _make_string_from_template(path_to_value, diff, key)
+            elif diff[key]['status1'] == 'deleted':
+                string = _make_string_from_template(path_to_value, diff, key)
+            elif diff[key]['status1'] == 'replaced':
+                string = _make_string_from_template(path_to_value, diff, key)
+            elif diff[key]['status1'] == 'changed':
+                next_step_path = path_to_value + '.'
+                string = inner(diff[key]['body1'], next_step_path)
+            else:
+                continue
+            result.append(string)
 
-    return '\n'.join(result)
+            return '\n'.join(result)
+    
+    return inner(diff)
