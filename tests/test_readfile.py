@@ -1,18 +1,12 @@
 from gendiff.readfile import read_file
 
+PATH_TO_FILE_1 = 'tests/fixtures/file1_flat.json'
+FILE1 = {
+  "host": "hexlet.io",
+  "timeout": 50,
+  "proxy": "123.234.53.22",
+  "follow": False
+}
 
 def test_read_file():
-    file1 = {
-      "host": "hexlet.io",
-      "timeout": 50,
-      "proxy": "123.234.53.22",
-      "follow": False
-    }
-    file2 = {
-      "timeout": 20,
-      "verbose": True,
-      "host": "hexlet.io"
-    }
-
-    assert read_file('tests/fixtures/file1_flat.json') == file1
-    assert read_file('tests/fixtures/file2_flat.json') == file2
+    assert read_file(PATH_TO_FILE_1) == FILE1
