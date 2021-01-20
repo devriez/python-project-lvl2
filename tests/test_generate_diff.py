@@ -4,7 +4,7 @@ PATH_TO_JSON_BEFORE = 'tests/fixtures/file_before.json'
 PATH_TO_JSON_AFTER = 'tests/fixtures/file_after.json'
 PATH_TO_YML_BEFORE = 'tests/fixtures/file_before.yml'
 PATH_TO_YML_AFTER = 'tests/fixtures/file_after.yml'
-PATH_TO_RESULT = 'tests/fixtures/result_printdiff.txt'
+PATH_TO_RESULT = 'tests/fixtures/result_stylish.txt'
 
 
 def test_generate_diff():
