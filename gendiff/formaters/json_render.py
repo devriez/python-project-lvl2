@@ -14,39 +14,55 @@ def _make_value(diff):
     return diff
 
 
-def json_render(diff):
+def _make_string_from_template(diff, key):
 
-    def inner(diff, sort_flag='sort'):
+    status = diff[key]['status1']
+    template: {
+        'added': (
+            f'"{key}": {{"status1": "added", '
+            f'"body1": {json_render(diff[key]["body1"], "no_sort")}}}'
+            ),
+        'deleted': (
+            f'"{key}": {{"status1": "deleted", '
+            f'"body1": {json_render(diff[key]["body1"], "no_sort")}}}'
+            ),
+        'unchanged': (
+            f'"{key}": {{"status1": "unchanged", '
+            f'"body1": {json_render(diff[key]["body1"], "no_sort")}}}'
+            ),
+        'replaced': (
+            f'"{key}": {{"status1": "replaced", '
+            f'"body1": {json_render(diff[key]["body1"], "no_sort")}, '
+            f'"body2": {json_render(diff[key]["body2"], "no_sort")}}}'
+            ),
+        'changed': (
+            f'"{key}": {{"status1": "changed", '
+            f'"body1": {json_render(diff[key]["body1"],"sort")}}}'
+            )
+    }
+    return template[status]
 
-        if type(diff) != dict:
-            return _make_value(diff)
 
-        result = ['{']
+def json_render(diff, sort_flag='sort'):
 
-        if sort_flag == 'sort':
-            keys = sorted(diff.keys())
-        else:
-            keys = diff.keys()
+    if type(diff) != dict:
+        return _make_value(diff)
 
-        counter = 0
+    result = ['{']
 
-        for key in keys:
-            counter += 1
-            if diff[key]['status1'] == 'added':
-                string =f'"{key}": {{"status1": "added", "body1": {inner(diff[key]["body1"], "no_sort")}}}'
-            if diff[key]['status1'] == 'deleted':
-                string =f'"{key}": {{"status1": "deleted", "body1": {inner(diff[key]["body1"], "no_sort")}}}'
-            if diff[key]['status1'] == 'unchanged':
-                string =f'"{key}": {{"status1": "unchanged", "body1": {inner(diff[key]["body1"], "no_sort")}}}'
-            if diff[key]['status1'] == 'replaced':
-                string =f'"{key}": {{"status1": "replaced", "body1": {inner(diff[key]["body1"], "no_sort")}, "body2": {inner(diff[key]["body2"], "no_sort")}}}'
-            if diff[key]['status1'] == 'changed':
-                string =f'"{key}": {{"status1": "changed", "body1": {inner(diff[key]["body1"],"sort")}}}'
-            if counter < len(keys):
-                string += ', '
-            result.append(string)
+    if sort_flag == 'sort':
+        keys = sorted(diff.keys())
+    else:
+        keys = diff.keys()
 
-        result.append('}')
-        return ''.join(result)
+    counter = 0
 
-    return inner(diff)
+    for key in keys:
+        counter += 1
+        string = _make_string_from_template(diff, key)
+        if counter < len(keys):
+            string += ', '
+        result.append(string)
+
+    result.append('}')
+    return ''.join(result)
