@@ -29,8 +29,10 @@ def test_generate_diff():
 
     f = open(PATH_TO_RESULT_JSON)
     result_correct_json = f.read()
+    print('result_correct_json', result_correct_json)
     result_json = generate_diff(
        PATH_TO_JSON_BEFORE, PATH_TO_JSON_AFTER, 'json')
+    print('result_json', result_json)
     assert result_json == result_correct_json
     result_json = generate_diff(PATH_TO_YML_BEFORE, PATH_TO_YML_AFTER, 'json')
     assert result_json == result_correct_json
