@@ -6,14 +6,11 @@ def make_diff(file1, file2=None):
     if file2 is None:
         file2 = file1
 
-    keys1 = list(file1.keys())
-    keys2 = list(file2.keys())
-
-    all_keys = keys1 if (file1 == file2) else set(keys1 + keys2)
+    keys = _collect_keys(file1, file2)
 
     result = {}
 
-    for key in all_keys:
+    for key in keys:
         if key in file1 and key not in file2:
             result[key] = {
                 'status1': 'deleted',
@@ -43,3 +40,10 @@ def make_diff(file1, file2=None):
                     }
 
     return result
+
+def _collect_keys(file1, file2):
+
+    keys1 = list(file1.keys())
+    keys2 = list(file2.keys())
+
+    return keys1 if (file1 == file2) else set(keys1 + keys2)
