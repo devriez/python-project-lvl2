@@ -1,11 +1,9 @@
 import json
 
 
-# def json_render(diff):
-#     result = diff.copy()
-#     return  json.dumps(diff)
-
 def _make_value(diff):
+    if type(diff) == str:
+        return f'"{diff}"'
     if diff is None:
         return 'null'
 
@@ -31,18 +29,22 @@ def json_render(diff):
             keys = diff.keys()
 
         layer = layer + 1
+        counter = 0
 
         for key in keys:
+            counter += 1
             if diff[key]['status1'] == 'added':
-                string = '"()": {"status1": "added", "body1": {()}}'.format(key, inner(diff[key]['body1'], layer))
+                string =f'"{key}": {{"status1": "added", "body1": {inner(diff[key]["body1"], layer)}}}'
             if diff[key]['status1'] == 'deleted':
-                string = '"()": {"status1": "deleted", "body1": {()}}'.format(key, inner(diff[key]['body1'], layer))
+                string =f'"{key}": {{"status1": "deleted", "body1": {inner(diff[key]["body1"], layer)}}}'
             if diff[key]['status1'] == 'unchanged':
-                string = '"()": {"status1": "added", "ubody1": {()}}'.format(key, inner(diff[key]['body1'], layer))
+                string =f'"{key}": {{"status1": "unchanged", "body1": {inner(diff[key]["body1"], layer)}}}'
             if diff[key]['status1'] == 'replaced':
-                string = '"()": {"status1": "replaced", "body1": {()}, "body2": {()}}'.format(key, inner(diff[key]['body1'], layer), inner(diff[key]['body2'], layer))
+                string =f'"{key}": {{"status1": "replaced", "body1": {inner(diff[key]["body1"], layer)}, "body2": {inner(diff[key]["body2"], layer)}}}'
             if diff[key]['status1'] == 'changed':
-                string = '"()": {"status1": "changed", "body1": {()}}'.format(key, inner(diff[key]['body1'], layer, 'sort'))
+                string =f'"{key}": {{"status1": "changed", "body1": {inner(diff[key]["body1"], layer, "sort")}}}'
+            if counter < len(keys):
+                string += ', '
             result.append(string)
 
         result.append('}')
