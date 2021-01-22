@@ -61,7 +61,6 @@ def plain_render(diff, path=''):
     Returns:
         String of diff rows, formatted as a plain.
     '''
-    print('diff in plain_render', diff)
     keys = sorted(diff.keys())
     result = []
 
