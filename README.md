@@ -3,25 +3,25 @@
 
 ### How to install
 _________________________________________________________________________________________________________________________________________________________________________________
-> pip install git+https://github.com/devriez/python-project-lvl2
+`pip install git+https://github.com/devriez/python-project-lvl2 `
 
 ### Usage
 _________________________________________________________________________________________________________________________________________________________________________________
 Getting help:
 
-> gendiff -h
+`gendiff -h `
 
 Run with the default output format (stylish):
 
-> gendiff first_file second_file
+'gendiff first_file second_file '
 
 You can also specify the format explicitly. Gendiff supports the output of the file comparison result in the following formats:
 
->stylish output (--format=stylish)
+'stylish output (--format=stylish)'
 
->plain text output (--format=playn)
+'plain text output (--format=playn)'
 
->json output (--format=json)
+'json output (--format=json)'
 
 ### Demo
 ___________________________________________________________________________________________________________________________________________________________________________________
