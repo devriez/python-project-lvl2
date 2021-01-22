@@ -1,4 +1,16 @@
 def _make_value(diff):
+    '''
+     Makу representation for key values,
+     that are not dictionary
+
+    Parameters:
+        diff: difference that are not dictionary
+
+    Return:
+        string format for 'None" and boolean
+        string as string, and numbers
+
+    '''
     if diff is None:
         return 'null'
 
@@ -10,6 +22,13 @@ def _make_value(diff):
 
 
 def stylish_render(diff):
+    '''
+    Format diff resuls in stylish format.
+    Parameters:
+        diff: Dictionaru with the diff result rows.
+    Returns:
+        String of diff rows, structured by indents.
+    '''
 
     def inner(diff, indent=0, sort_flag='no_need_to_sort'):
 

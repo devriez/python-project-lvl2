@@ -1,4 +1,15 @@
 def _make_value(value):
+    '''
+     Makу representation for key values,
+     that were added, deleted or replaced
+
+    Parameters:
+        diff: key value
+
+    Return:
+        key value formated in string
+
+    '''
     if type(value) == dict or type(value) == list:
         return '[complex value]'
     if type(value) == bool:
@@ -11,6 +22,19 @@ def _make_value(value):
 
 
 def _make_string_from_template(path, diff, key):
+    '''
+    Choose representation for diff depending on key status:
+    'added', 'deleted', 'replaced'
+    in plain format.
+
+    Parameters:
+        diff: dictionary with diff result rows
+        key: key of next diff iteration
+        path: path in dictionary to diff
+
+    Return:
+        string representation of diff in plain
+    '''
     template = {
         'added': (
             f"Property '{path}' was added with value: "
@@ -29,6 +53,14 @@ def _make_string_from_template(path, diff, key):
 
 
 def plain_render(diff, path=''):
+    '''
+    Format diff resuls in plain format.
+    Parameters:
+        diff: Dictionaru with the diff result rows.
+        path:  path: path in dictionary to diff
+    Returns:
+        String of diff rows, formatted as a plain.
+    '''
     print('diff in plain_render', diff)
     keys = sorted(diff.keys())
     result = []

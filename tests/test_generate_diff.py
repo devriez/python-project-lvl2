@@ -1,4 +1,4 @@
-from gendiff.scripts.generate_diff import generate_diff
+from gendiff.gendiff import generate_diff
 
 PATH_TO_JSON_BEFORE = 'tests/fixtures/file_before.json'
 PATH_TO_JSON_AFTER = 'tests/fixtures/file_after.json'
