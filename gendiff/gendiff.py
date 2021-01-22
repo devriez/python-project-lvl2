@@ -19,3 +19,4 @@ def generate_diff(path1, path2, formater_name='stylish'):
     diff = make_diff(file1, file2)
     formater = select_formater(formater_name)
     return formater(diff)
+    

@@ -47,11 +47,20 @@ def stylish_render(diff):
 
         for key in keys:
             if diff[key]['status1'] == 'added':
-                string = f"{step}  + {key}: {inner(diff[key]['body1'], indent)}"
+                string = (
+                    f"{step}  + {key}: "
+                    f"{inner(diff[key]['body1'], indent)}"
+                    )
             if diff[key]['status1'] == 'deleted':
-                string = f"{step}  - {key}: {inner(diff[key]['body1'], indent)}"
+                string = (
+                    f"{step}  - {key}: "
+                    f"{inner(diff[key]['body1'], indent)}"
+                    )
             if diff[key]['status1'] == 'unchanged':
-                string = f"{step}    {key}: {inner(diff[key]['body1'], indent)}"
+                string = (
+                    f"{step}    {key}: "
+                    f"{inner(diff[key]['body1'], indent)}"
+                    )
             if diff[key]['status1'] == 'replaced':
                 string = (
                     f"{step}  - {key}: {inner(diff[key]['body1'], indent)}"

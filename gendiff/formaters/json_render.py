@@ -1,6 +1,3 @@
-import json
-
-
 def _make_value(diff):
     '''
     Makу representation for key values,

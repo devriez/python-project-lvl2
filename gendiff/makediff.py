@@ -48,6 +48,7 @@ def make_diff(dict1, dict2=None):
 
     return result
 
+
 def _collect_keys(dict1, dict2):
 
     keys1 = list(dict1.keys())
