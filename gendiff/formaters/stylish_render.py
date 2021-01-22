@@ -66,10 +66,13 @@ def stylish_render(diff):
                     f"{step}  - {key}: {inner(diff[key]['body1'], indent)}"
                     '\n'
                     f"{step}  + {key}: {inner(diff[key]['body2'], indent)}"
-                )
+                    )
             if diff[key]['status1'] == 'changed':
                 diff_inner = diff[key]['body1']
-                string = f"{step}    {key}: {inner(diff_inner, indent, 'sort')}"
+                string = (
+                    f"{step}    {key}: "
+                    f"{inner(diff_inner, indent, 'sort')}"
+                    )
             result.append(string)
 
         result.append(f'{step}}}')

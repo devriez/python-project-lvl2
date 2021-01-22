@@ -25,7 +25,7 @@ def _make_value(diff):
 def _make_string_from_template(diff, key):
     '''
     Choose representation for diff depending on key status:
-    'added', 'deleted', 'unchanged', 'changed', replaced 
+    'added', 'deleted', 'unchanged', 'changed', replaced
     in json format.
 
     Parameters:
