@@ -1,3 +1,4 @@
-from .scripts.generate_diff import generate_diff
+"""Gendiff - comparison utility."""
+from gendiff.gendiff import generate_diff
 
-all = [generate_diff]  # noqa: WPS410
+__all__ = [generate_diff]  # noqa: WPS410
