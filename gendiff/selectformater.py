@@ -10,4 +10,11 @@ formaters = {
 
 
 def select_formater(name):
+    """
+    Select type of formater for specified output format
+    Parameters:
+        name: output format name
+    Returns:
+        function that makes specified output format
+    """
     return formaters[name]
