@@ -39,13 +39,13 @@ def _make_string_from_template(path, diff, key):
         'added': (
             f"Property '{path}' was added with value: "
             f"{_make_value(diff[key]['body1'])}"
-            ),
+        ),
         'deleted': f"Property '{path}' was removed",
         'replaced': (
             f"Property '{path}' was updated. "
             f"From {_make_value(diff[key]['body1'])} "
             f"to {_make_value(diff[key].get('body2'))}"
-            )
+        )
     }
     status = diff[key]['status1']
 

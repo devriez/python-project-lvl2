@@ -41,24 +41,24 @@ def _make_string_from_template(diff, key):
         'added': (
             f'"{key}": {{"status1": "added", '
             f'"body1": {json_render(key_value.get("body1"), "no_sort")}}}'
-            ),
+        ),
         'deleted': (
             f'"{key}": {{"status1": "deleted", '
             f'"body1": {json_render(key_value.get("body1"), "no_sort")}}}'
-            ),
+        ),
         'unchanged': (
             f'"{key}": {{"status1": "unchanged", '
             f'"body1": {json_render(key_value.get("body1"), "no_sort")}}}'
-            ),
+        ),
         'replaced': (
             f'"{key}": {{"status1": "replaced", '
             f'"body1": {json_render(key_value.get("body1"), "no_sort")}, '
             f'"body2": {json_render(key_value.get("body2"), "no_sort")}}}'
-            ),
+        ),
         'changed': (
             f'"{key}": {{"status1": "changed", '
             f'"body1": {json_render(key_value.get("body1"),"sort")}}}'
-            )
+        )
     }
     return template[status]
 
