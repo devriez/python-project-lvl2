@@ -12,4 +12,3 @@ def test_plain():
     diff = read_file(PATH_TO_DIFF)
     result = plain_render(diff)
     assert result == correct_result
-    

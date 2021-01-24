@@ -11,7 +11,7 @@ FILE1 = {
             "doge": {
                 "wow": ""
             }
-      }
+        }
     },
     "group1": {
         "baz": "bas",
@@ -26,7 +26,7 @@ FILE1 = {
             "id": 45
         }
     }
-  }
+}
 
 
 def test_read_file():
