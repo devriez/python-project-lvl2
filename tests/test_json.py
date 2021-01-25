@@ -4,6 +4,7 @@ from gendiff.readfile import read_file
 PATH_TO_DIFF = 'tests/fixtures/result_makediff.json'
 PATH_TO_RESULT = 'tests/fixtures/result_json.txt'
 
+
 def test_json():
 
     f = open(PATH_TO_RESULT)

@@ -22,29 +22,29 @@ def make_diff(dict1, dict2=None):
             result[key] = {
                 'status1': 'deleted',
                 'body1': make_diff(dict1[key])
-                }
+            }
         elif key in dict2 and key not in dict1:
             result[key] = {
                 'status1': 'added',
                 'body1': make_diff(dict2[key])
-                }
+            }
         else:
             if dict1[key] == dict2[key]:
                 result[key] = {
                     'status1': 'unchanged',
                     'body1': make_diff(dict1[key])
-                    }
+                }
             elif (type(dict1[key]) != dict) or (type(dict2[key]) != dict):
                 result[key] = {
                     'status1': 'replaced',
                     'body1': make_diff(dict1[key]),
                     'body2': make_diff(dict2[key])
-                    }
+                }
             else:
                 result[key] = {
                     'status1': 'changed',
                     'body1': make_diff(dict1[key], dict2[key])
-                    }
+                }
 
     return result
 
