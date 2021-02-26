@@ -16,9 +16,6 @@ package-install:
 lint:
 	poetry run flake8 gendiff
 
-nano:
-	nano gendiff/scripts/gendiff.py
-
 test:
 	poetry run pytest tests -vv
 
